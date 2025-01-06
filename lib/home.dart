@@ -20,14 +20,15 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Welcome!',
+            Center(
+                child: Text(
+              'User logged in successfully',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
+            )),
             SizedBox(height: 16),
-            Text('Email: $email'),
+            Center(child: Text('Email: $email')),
             SizedBox(height: 8),
-            Text('Wallet address: ${wallet ?? "not found"}'),
+            Center(child: Text('Wallet address: ${wallet ?? "not found"}')),
             SizedBox(height: 32),
             Center(
               child: ElevatedButton(
@@ -35,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                   await _authService.logout();
                   Navigator.popUntil(context, (route) => route.isFirst);
                 },
-                child: Text('Log out'),
+                child: Text('Logout'),
               ),
             ),
           ],
