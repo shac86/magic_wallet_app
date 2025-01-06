@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "717046533949",
+    "project_id": "magic-wallet-app",
+    "storage_bucket": "magic-wallet-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717046533949:android:92364419bb8a1aa3f4ff54",
+        "android_client_info": {
+          "package_name": "com.example.magic_wallet_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa16qphbdF808qfT6aQBPl3z5MG1JnKGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
