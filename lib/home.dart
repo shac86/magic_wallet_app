@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:magic_wallet_app/main.dart';
 import 'package:magic_wallet_app/services/auth_service.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -33,8 +34,18 @@ class HomeScreen extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 onPressed: () async {
-                  await _authService.logout();
-                  Navigator.popUntil(context, (route) => route.isFirst);
+                  try {
+                    await _authService.logout();
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (_) => MyApp()),
+                      (route) => false,
+                    );
+                  } catch (e) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Error: ${e.toString()}")),
+                    );
+                  }
                 },
                 child: Text('Logout'),
               ),

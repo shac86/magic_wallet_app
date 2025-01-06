@@ -102,6 +102,9 @@ class AuthService {
     try {
       await _auth.signOut();
       await Magic.instance.user.logout();
+      
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.clear();
       print("The user has logged out.");
     } catch (e) {
       print("Exit error: $e");
